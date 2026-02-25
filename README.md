@@ -12,6 +12,22 @@
 
 ***
 
+## Unity 6 patches applied in this fork:
+
+#### Il2CppInterop.Generator — AsmResolver 6.0.0-beta.2 to beta.5:
+  - .csproj version bump
+  - .Module > .DeclaringModule across ~10 files
+  - new CilMethodBody(method) > new CilMethodBody() across a bunch of files
+
+#### Il2CppInterop.Runtime — Unity 6 fixes:
+  - GenericMethod_GetMethod_Hook.cs: added null check for gmethod->methodDefinition, removed Unity 6 code path (returns
+   to original behavior for pre-Unity 6)
+  - GenericMethod_GetMethod_Unity6_Hook.cs: new file, 3-param delegate hook because Unity 6 inlines the 1-param
+  GetMethod into the 3-param version
+  - InjectorHelpers.cs: picks Unity 6 hook when version.Major >= 6000
+
+
+### Rest of README 
 > **BepInEx fork of Il2CppAssemblyUnhollower is now Il2CppInterop!**
 >
 > Looking for old README and guides? Check out [`legacy-unhollower` branch](https://github.com/BepInEx/Il2CppInterop/tree/legacy-unhollower).
