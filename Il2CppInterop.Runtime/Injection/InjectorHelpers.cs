@@ -159,6 +159,20 @@ namespace Il2CppInterop.Runtime.Injection
                 pattern = "\xE8\x00\x00\x00\x00\x0F\xB7\x47\x48\x48",
                 mask = "x????xxxxx",
                 xref = true
+            },
+            new MemoryUtils.SignatureDefinition
+            {
+                pattern = "\x48\x8B\xF9\xF6\x81\x36\x01\x00\x00\x01",
+                mask = "xxxxxxxxxx",
+                offset = -0x14,
+                xref = false
+            },
+            new MemoryUtils.SignatureDefinition
+            {
+                pattern = "\x48\x83\xEC\x10\x0F\xB7\x87\x35\x01\x00\x00\xA9\x00\x01\x00\x00",
+                mask = "xxxxxxxxxxxxxxxx",
+                offset = -0x5,
+                xref = false
             }
         };
 
